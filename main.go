@@ -4,8 +4,11 @@ package main
 
 import (
 	"fmt"
-	// "github.com/emgeorrk/go-hashlib"
 	"os"
+	"crypto/sha256"
+	// "crypto/md5"
+	"log"
+	"io"
 )
 
 func getFileSize(file string) int64 {
@@ -22,12 +25,18 @@ func main() {
 
 	fmt.Println("Enter File Path: ")
 	fmt.Scanf("%s", &file)
+	// file size shit
 	fileSizeB := getFileSize(file)
 	fileSizeKB := float64(fileSizeB) / 1024
 	fileSizeMB := fileSizeKB / 1024
 	fmt.Printf("%.2f MB in size", fileSizeMB)
-}
-// func getHash() {
-//
-//
+	// TODO MAKE HASH'S WORK
+// 	hash := sha256.New()
+// 	sum := hash.Sum(nil)
+// 	if _, err := io.Copy(hash, file); err != nil {
+// 	log.Fatal(err)
 // }
+// 	fmt.Printf("%x", sum)
+// }
+}
+
